@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background:linear-gradient(#333333 70%, #3f3058);
+    height: 100vh;
+}
+
+nav ul{
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    background-color: rgb(17, 17, 17,.5);
+    height: 56px;
+}
+nav ul li{
+    padding: 10px 20px;
+    border-right: 1px solid rgb(192, 192, 192, .03);
+    text-align: center;
+}
+
+nav ul li:first-of-type{
+    width: 150px;
+}
+
+nav li a{
+    font-size: 18px;
+    line-height: 2;
+    text-decoration: none;
+    color:white;
+}
+
+a.btn{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius:.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+}
+
+a.btn:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.produtos-container{
+    padding: 20px;
+}
+
+.produtos{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 1vw;
+    column-gap: 1vw;
+}
+
+.produto{
+    padding: 10px;
+    display: flex;
+    width: calc(calc(calc(100vw - 40px) / 3) - 2vw);
+    background-color: ghostwhite;
+}
+
+
+.produto-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produto .produto-left img{
+    width: 200px;
+}
+
+.produto .produto-left p{
+    text-align: center;
+    font-size: 22px;
+}
+
+.produto-right{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.produto-name, .produto-price, .produto-description, .produto-button{
+    width: 100%;
+}
+
+.produto-name h2{
+    font-size: 30px;
+}
+
+.produto-price p{
+    font-size: 50px;
+    display: flex;
+    align-items: baseline;
+}
+
+.produto-price p .cents{
+    font-size: 1;
+}
+.produto-price p .cents:before{
+    content: ',';
+}
+    
+.produto-description p{
+    font-size: 17px;
+    font-weight: 300;
+    padding:10px 0;
+}

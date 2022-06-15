@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link href="produtos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <head>
+        <nav>
+            <ul>
+                <li><a href='/'>DEV MUGS</a></li>
+                <li><a href='/produtos'>Produtos</a></li>
+                <li><a href='/carrinho'>Carrinho</a></li>
+            </ul>
+        </nav>
+    </head>
+    <main>
+        <div class='produtos-container'>
+            <ul class='produtos'>
+                <% products.forEach(item => { %>
+                <li class='produto'>
+                    <div class='produto-left'>
+                        <div class='produto-image'>
+                            <img src='<%= item.image %>' alt=' <%= item.name %>' />
+                        </div>
+                    </div>
+                    <div class='produto-right'>
+                        <div class='produto-name'>
+                            <h2><%= item.name %></h2>
+                        </div>
+                        <div class='produto-price'>
+                            <% const [price, cents] = item.price.toLocaleString('pt-BR', { style:'currency', currency: 'BRL'}).split(','); %>
+                            <p>
+                                <span class='price'><%= price %></span>
+                                <span class="cents"><%= cents %></span>
+                            </p>
+                        </div>
+                        <div class='produto-description'>
+                            <p><%= item.description %></p>
+                        </div>
+                        <div class="produto-button">
+                            <a class="btn" href='/carrinho'>Ver Mais</a>
+                        </div>
+                    </div>
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
