@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFERTAS!!</title>
+    <link href="/produto.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <head>
+        <nav>
+            <ul>
+                <li><a href='/'>DEV MUGS</a></li>
+                <li><a href='/produtos'>Produtos</a></li>
+                <li><a href='/carrinho'>Carrinho</a></li>
+            </ul>
+        </nav>
+    </head>
+    <main>
+        <div>
+            <div class="oferta">
+                <div class='oferta-img-container'>
+                    <img class='oferta-img' src='<%= image %>' alt='<%= name %>' />
+                </div>
+                <div class="oferta-name-container">
+                    <h1 class='oferta-name'>
+                        <%= name %>
+                    </h1>
+                    <div class='produto-price'>
+                        <% const [fullprice, cents] = price.toLocaleString('pt-BR', { style:'currency', currency: 'BRL'}).split(','); %>
+                        <p>
+                            <span class='price'><%= fullprice %></span>
+                            <span class="cents"><%= cents %></span>
+                        </p>
+                    </div>
+                    <a class="btn" href="/produtos">Ver outros produtos</a>
+                    <a class="btn" href="">Comprar</a>
+                </div>
+
+            </div>
+            <hr />
+            <div class="description">
+                <%= description %>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

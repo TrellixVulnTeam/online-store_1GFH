@@ -22,6 +22,18 @@ app.get("/", async (req, res) => {
     res.render("index", canecaPokemon)
 });
 
+app.get("/produtos/:id", async (req, res) => {
+    const id = req.params.id;
+
+    const product = await productRepository.getProductBySKU(id);
+    if(!product){
+        res.setHeader('content-type', 'text/html; charset=utf-8');
+        res.status(404);
+        return res.end('produto não encontrado');
+    }
+    res.render("produto", product)
+})
+
 app.get("/produtos", async (req, res) => {
     res.setHeader('content-type', 'text/html; charset=utf-8');
 
